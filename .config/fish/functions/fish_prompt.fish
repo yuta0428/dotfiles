@@ -1,0 +1,1 @@
+/Users/YUTA-PC/.config/fisherman/pure.fish/fish_prompt.fish
