@@ -24,7 +24,7 @@ chsh -s /usr/local/bin/fish
 shellを再起動
 fishのためのプラグインマネージャ追加
 ```
-curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman
 ```
 
 ```
