@@ -61,9 +61,9 @@ function _prompt_color_for_status
 end
 function _prompt_face_for_status
   if test $argv[1] -eq 0
-    echo -e "(๑˃̵ᴗ˂̵)و"
+    echo -e "(｡･∀･)ﾉ"
   else
-    echo -e "(๑°д°)۶"
+    echo -e "( ;･∀･)"
   end
 end
 function _prompt_data
@@ -77,5 +77,5 @@ function fish_prompt
     _print_in_color " "(_git_status) FCBC47
     _print_in_color " "(_git_upstream_status) 89B8C2
   end
-  _print_in_color "\n"(_prompt_face_for_status $last_status)"❯ " (_prompt_color_for_status $last_status)
+  _print_in_color "\n"(_prompt_face_for_status $last_status)" \$ " (_prompt_color_for_status $last_status)
 end
