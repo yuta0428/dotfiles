@@ -61,9 +61,9 @@ function _prompt_color_for_status
 end
 function _prompt_face_for_status
   if test $argv[1] -eq 0
-    echo -e "(｡･∀･)ﾉ"
+    echo -e "(｡･ω･)ﾉ"
   else
-    echo -e "( ;･∀･)"
+    echo -e "(｡>Д<)ﾉ"
   end
 end
 function _prompt_data
