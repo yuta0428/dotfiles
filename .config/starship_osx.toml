@@ -1,0 +1,76 @@
+# https://starship.rs/config/#configuration
+add_newline = true
+prompt_order = [
+    "time",
+    "directory",
+    "git_branch",
+    "git_commit",
+    "git_state",
+    "git_status",
+    "hg_branch",
+    "package",
+    "dotnet",
+    "elixir",
+    "elm",
+    "golang",
+    "haskell",
+    "java",
+    "julia",
+    "nodejs",
+    "php",
+    "python",
+    "ruby",
+    "rust",
+    "line_break",
+    "character",
+]
+
+[time]
+disabled = false
+format = "[%Y/%m/%d %T]"
+style = "yellow"
+
+[git_branch]
+disabled = false
+symbol = ""
+truncation_length = 100
+truncation_symbol = ""
+style = "bold purple"
+
+[git_commit]
+disabled = false
+commit_hash_length = 7
+prefix = "("
+suffix = ")"
+style = "bold green"
+only_detached = true
+
+[git_status]
+disabled = false
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇡⇣"
+prefix = "["
+suffix = "]"
+style = "red"
+conflicted_count.enabled = true
+untracked = " U"
+untracked_count.enabled = true
+staged = " A"
+stashed_count.enabled = false
+modified = " M"
+modified_count.enabled = true
+staged_count.enabled = true
+renamed_count.enabled = true
+deleted = " D"
+deleted_count.enabled = true
+show_sync_count = true
+
+[character]
+disabled = false
+symbol = "(๑˃̵ᴗ˂̵)و"
+error_symbol = "(๑°д°)۶"
+use_symbol_for_status = true
+style_success = "cyan"
+style_failure = "red"
+
