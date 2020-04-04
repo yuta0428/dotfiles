@@ -23,7 +23,4 @@ zinit wait lucid atload"zicompinit; zicdreplay" blockf for zsh-users/zsh-complet
 
 ### End of Zinit's installer chunk
 
-
 eval "$(starship init zsh)"
-### End of Zinit's installer chunk
-### End of Zinit's installer chunk
