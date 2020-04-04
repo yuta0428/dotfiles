@@ -11,7 +11,9 @@ chsh -s $(which zsh)
 
 ## Intall Zinit (for zsh plugin manager)
 ## https://github.com/zdharma/zinit#installation
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+if !(type "zinit" > /dev/null 2>&1); then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+fi
 
 ## Setup zshrc
 FILE="$HOME/.zshrc"
