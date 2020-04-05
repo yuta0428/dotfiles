@@ -5,10 +5,8 @@
 
 #### Clone the dotfiles repository
 ```
-cd ~
-git clone https://github.com/yuta0428/dotfiles.git
+cd ~ && git clone https://github.com/yuta0428/dotfiles.git
 ```
-
 
 
 ## zsh
