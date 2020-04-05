@@ -1,0 +1,1 @@
+/Users/YUTA-PC/dotfiles/.config/fish/config_local_osx.fish
