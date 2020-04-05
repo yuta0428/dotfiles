@@ -1,13 +1,15 @@
 set -eu
+echo_and_do () { echo "$1"; eval "$1"; }
 
 ## Check installed zsh
 if !(type "zsh" > /dev/null 2>&1); then
-    echo "Error: Please zsh install."
+    echo "zsh: command not found. Please install zsh."
     exit 1
 fi
 
 ## Finished install zsh
 chsh -s $(which zsh)
+echo "Set default shell: $SHELL"
 
 ## Intall Zinit (for zsh plugin manager)
 ## https://github.com/zdharma/zinit#installation
@@ -18,6 +20,12 @@ fi
 ## Setup zshrc
 FILE="$HOME/.zshrc"
 if [ -e $FILE ];then
-    mv $HOME/.zshrc $HOME/.zshrc_bk`date "+%Y%m%d%H%M%S"`
+    BK=$HOME/.zshrc_bk`date "+%Y%m%d%H%M%S"`
+    mv $FILE $BK
+    echo "$FILE: File exists.\nBackuped... $BK\n"
 fi
-ln -s ~/dotfiles/.zshrc $FILE
+
+echo_and_do "ln -s ~/dotfiles/.zshrc $FILE"
+
+echo
+echo "Finished success."

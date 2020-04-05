@@ -1,4 +1,5 @@
 set -eu
+echo_and_do () { echo "$1"; eval "$1"; }
 
 ## Install starship
 ## https://github.com/starship/starship#-installation
@@ -9,10 +10,12 @@ fi
 ## Setup starship
 FILE="$HOME/.config/starship.toml"
 if [ -e $FILE ];then
-    mv $FILE $HOME/.config/starship_bk`date "+%Y%m%d%H%M%S"`.toml
+    BK=$HOME/.config/starship_bk`date "+%Y%m%d%H%M%S"`.toml
+    mv $FILE $BK
+    echo "$FILE: File exists.\nBackuped... $BK\n"
 fi
 if [ "$(uname)" == 'Darwin' ]; then
-    ln -s ~/dotfiles/.config/starship_osx.toml $FILE
+    echo_and_do "ln -s ~/dotfiles/.config/starship_osx.toml $FILE"
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     echo "Your platform ($(uname -a)) is not supported."
     exit 1
@@ -23,3 +26,6 @@ else
     echo "Your platform ($(uname -a)) is not supported."
     exit 1
 fi
+
+echo
+echo "Finished success."

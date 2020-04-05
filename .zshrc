@@ -23,4 +23,5 @@ zinit wait lucid atload"zicompinit; zicdreplay" blockf for zsh-users/zsh-complet
 
 ### End of Zinit's installer chunk
 
-eval "$(starship init zsh)"
+if type "starship" > /dev/null 2>&1; then eval "$(starship init zsh)"; fi
+
