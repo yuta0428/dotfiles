@@ -25,5 +25,10 @@ zinit wait lucid atload"zicompinit; zicdreplay" blockf for zsh-users/zsh-complet
 
 if type "starship" > /dev/null 2>&1; then eval "$(starship init zsh)"; fi
 
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init - --no-rehash)"
+
+export PATH="/usr/local/sbin:$PATH"
+
 ### End of Zinit's installer chunk
 ### End of Zinit's installer chunk
