@@ -1,4 +1,3 @@
-
 ## Getting Started
 #### Prerequisites
 - Git, curl installed and enabled in terminal.
@@ -35,7 +34,7 @@ sh ~/dotfiles/bin/setup_fish.sh
 A symbolic link will be created in the following files.
 - `.config/fish/*.fish`
 
-## starship
+## starship(~0.45)
 #### Set up starship in your shell.
 ```
 sh ~/dotfiles/bin/setup_starship.sh
