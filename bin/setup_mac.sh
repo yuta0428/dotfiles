@@ -4,7 +4,7 @@
 if !(type "brew" > /dev/null 2>&1); then
     echo "# Install brew >>>>>>>"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    (echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> /Users/yuta.okamoto/.zprofile
+    (echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> ~/.zprofile
     eval "$(/usr/local/bin/brew shellenv)"
 fi
 echo "# brew version: `brew -v`"
