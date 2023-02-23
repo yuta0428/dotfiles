@@ -1,6 +1,7 @@
 # !/bin/bash -eu
 
 # Install starship
+# https://starship.rs/guide/#%F0%9F%9A%80-installation
 if !(type "starship" > /dev/null 2>&1); then
     echo "# Install starship >>>>>>>"
     brew install starship
