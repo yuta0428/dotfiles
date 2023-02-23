@@ -4,6 +4,8 @@
 if !(type "brew" > /dev/null 2>&1); then
     echo "# Install brew >>>>>>>"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    (echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> /Users/yuta.okamoto/.zprofile
+    eval "$(/usr/local/bin/brew shellenv)"
 fi
 echo "# brew version: `brew -v`"
 
@@ -27,11 +29,12 @@ echo "# Install brew tools >>>>>>>"
 if !(brew ls --versions git > /dev/null 2>&1); then
     echo "# Install git >>>>>>>"
     brew install git
-    echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.zshenv
-    source ~/.zshenv
+    brew tap microsoft/git
+    brew install git-credential-manager-core
 fi
 echo "# brew git version:"
 echo `git --version`
+echo `git config --show-origin credential.helper`
 
 echo
 echo "# Show hidden files >>>>>>>"
