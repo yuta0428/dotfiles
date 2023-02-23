@@ -61,7 +61,6 @@ untracked = "U$count"
 staged = "A$count"
 modified = "M$count"
 deleted = "D$count"
-show_sync_count = true
 
 [character]
 disabled = false
