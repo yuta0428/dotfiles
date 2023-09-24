@@ -1,0 +1,39 @@
+# Setting
+## "登録されている拡張子は表示しない" チェックOFF
+Set-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -name "HideFileExt" -Value 0
+
+## "隠しファイル、隠しフォルダ、および隠しドライブを表示する" チェックON
+Set-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -name "Hidden" -Value 1
+
+Stop-Process -ProcessName explorer
+
+# Application
+## Google JapaneseIME
+## This has a bug that does not work. https://github.com/microsoft/winget-pkgs/issues/92434
+## MicroSoft IME is good enough. https://ringo-hack.com/mac/windows-mac-keyboard-style/
+# winget install Google.JapaneseIME
+
+## Dev Home
+winget install --id Microsoft.DevHome -e
+
+## WindowsTerminal
+winget install Microsoft.WindowsTerminal
+
+## Git
+winget install Git.Git
+
+## Visual Studio Code
+winget install Microsoft.VisualStudioCode
+
+# WSL2
+wsl --install
+
+
+# Input Setting
+Write-Output ">> WindowsのキーボードをMac風にする方法 : https://ringo-hack.com/mac/windows-mac-keyboard-style/"
+Pause
+
+# Restart
+Write-Output "再起動します"
+Pause
+Restart-Computer
