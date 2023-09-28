@@ -15,7 +15,7 @@ cd ~ && git clone https://github.com/yuta0428/dotfiles.git
 
 #### Set up zsh in your shell.
 ```
-sh ~/dotfiles/bin/setup_zsh.sh
+bash ~/dotfiles/bin/setup_zsh.sh
 ```
 
 A symbolic link will be created in the following file.
@@ -28,7 +28,7 @@ A symbolic link will be created in the following file.
 
 #### Set up fish in your shell.
 ```
-sh ~/dotfiles/bin/setup_fish.sh
+bash ~/dotfiles/bin/setup_fish.sh
 ```
 
 A symbolic link will be created in the following files.
@@ -36,24 +36,7 @@ A symbolic link will be created in the following files.
 
 ## starship(~0.45)
 #### Set up starship in your shell.
+**Mac or WSL**
 ```
-sh ~/dotfiles/bin/setup_starship.sh
-```
-
-A symbolic link will be created in the following file.
-- `.config/starship.toml`
-
-
-#### Add the following to the end of shell configuration
-- ~/.bashrc:
-```
-eval "$(starship init bash)"
-```
-- ~/.config/fish/config.fish:
-```
-starship init fish | source
-```
-- ~/.zshrc:
-```
-eval "$(starship init zsh)"
+bash ~/dotfiles/bin/setup_starship_linux.sh
 ```
