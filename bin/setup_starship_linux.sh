@@ -15,7 +15,7 @@ echo
 read -n1 -p "# Add .config/starship.toml? (y/N)" yn
 if [[ $yn = [yY] ]]; then
     echo "# Add .config/starship.toml >>>>>>>"
-    curl --create-dirs --output .config/starship.toml \
-        https://raw.githubusercontent.com/yuta0428/dotfiles/master/.config/starship_osx.toml
+    curl --create-dirs --output .~/.config/starship.toml \
+        https://raw.githubusercontent.com/yuta0428/dotfiles/master/.config/starship.toml
 fi
 echo

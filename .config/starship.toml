@@ -42,6 +42,7 @@ symbol = ""
 truncation_length = 100
 truncation_symbol = ""
 style = "bold purple"
+format = '[$symbol$branch ]($style)'
 always_show_remote = true
 
 [git_commit]
