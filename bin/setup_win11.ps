@@ -27,6 +27,16 @@ winget install Microsoft.VisualStudioCode
 
 # WSL2
 wsl --install
+Write-Output ">> ubuntu user一覧 '$wsl compgen -u'"
+wsl compgen -u
+$confirmation = Read-Host -Prompt ">> デフォルトユーザーを追加しますか？ (Y/n)"
+if ($confirmation -eq "Y" -or $confirmation -eq "y") {
+    $username = Read-Host -Prompt ">> username: "
+    wsl adduser $username
+    wsl sudo passwd $username
+    wsl sudo gpasswd -a $username sudo
+    ubuntu config --default-user $username
+}
 
 
 # Input Setting
