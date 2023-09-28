@@ -38,6 +38,13 @@ if ($confirmation -eq "Y" -or $confirmation -eq "y") {
     ubuntu config --default-user $username
 }
 
+# Git
+# https://zenn.dev/horatjp/articles/windows-dev-env#git
+wsl touch /mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c "<nul set /p=%UserName%" 2>/dev/null)/.gitconfig
+wls ln -s /mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c "<nul set /p=%UserName%" 2>/dev/null)/.gitconfig ~/.gitconfig
+
+wsl touch /mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c "<nul set /p=%UserName%" 2>/dev/null)/.git-credentials
+wsl ln -s /mnt/c/Users/$(/mnt/c/Windows/System32/cmd.exe /c "<nul set /p=%UserName%" 2>/dev/null)/.git-credentials ~/.git-credentials
 
 # Input Setting
 Write-Output ">> WindowsのキーボードをMac風にする方法 : https://ringo-hack.com/mac/windows-mac-keyboard-style/"
