@@ -13,13 +13,14 @@ source "$HOME/.cargo/env"
 
 ## Install Zsh plugin manager
 ## https://sheldon.cli.rs/Installation.html
-sudo apt install -y gcc libssl-dev pkg-onfig
-cargo install sheldon
+if !(type "sheldon" > /dev/null 2>&1); then
+    echo "# Install sheldon >>>>>>>"
+    sudo apt install -y gcc libssl-dev pkg-onfig
+    cargo install sheldon
 
-sheldon init --shell zsh
-eval "$(sheldon source)"
-echo "Add the following line to '~/.zshrc' etc. to load Sheldon when the shell starts."
-echo '    eval "$(sheldon source)"'
+    sheldon init --shell zsh
+    (echo; echo 'eval "$(sheldon source)"') >> ~/.zshrc
+fi
 
 sheldon add zsh-autosuggestions --github zsh-users/zsh-autosuggestions
 sheldon add zsh-completions --github zsh-users/zsh-completions
