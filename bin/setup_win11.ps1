@@ -1,3 +1,6 @@
+# How to use
+## PS:> powershell -ExecutionPolicy Unrestricted ./setup_win11.ps1
+
 # Setting
 ## "登録されている拡張子は表示しない" チェックOFF
 Set-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -name "HideFileExt" -Value 0
