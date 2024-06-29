@@ -31,13 +31,23 @@ static class Commands
             Console.WriteLine("# Install brew >>>>>>>");
 
             // Install brew
-            Command.Exec("/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"");
+            var cmd = """
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+            """;
+            Command.Exec(cmd);
 
             // Add brew to the shell environment
-            Command.Exec("(echo; echo 'eval \"$(/usr/local/bin/brew shellenv)\"') >> ~/.zprofile");
-
             // Evaluate the brew shell environment
-            ExecuteCommand("/bin/bash", "-c \"eval \\\"$(/usr/local/bin/brew shellenv)\\\"\"");
+            cmd = Command.GetPlatform() switch
+            {
+                Platform.Mac => """
+                                (echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> ~/.zprofile
+                                eval "$(/usr/local/bin/brew shellenv)"
+                                """;
+                _ => "";
+            }
+            Command.Exec(cmd);
         }
+        Command.ExecMessage("# brew version:", "brew -v");
     }
 }

@@ -2,8 +2,27 @@ using System.Diagnostics;
 
 namespace Utils
 {
-    class Command
+    enum Platform
     {
+        Linux,
+        Mac,
+        Windows,
+        Other,
+    }
+
+    static class Command
+    {
+        public static Platform GetPlatform()
+        {
+            return Environment.OSVersion.Platform switch
+            {
+                PlatformID.Win32NT => Platform.Windows,
+                PlatformID.MacOSX => Platform.Mac,
+                PlatformID.Unix => Platform.Linux,
+                _ => Platform.Other,
+            };
+        }
+
         public static bool Exists(string command)
         {
             return Exec($"type {command}");
@@ -12,6 +31,14 @@ namespace Utils
         public static bool Exec(string arguments)
         {
             return Exec("/bin/bash", arguments);
+        }
+
+        public static bool ExecMessage(string message, string arguments)
+        {
+            Console.Write(message);
+            var result = Exec(arguments);
+            Console.WriteLine();
+            return result;
         }
 
         public static bool Exec(string fileName, string arguments)

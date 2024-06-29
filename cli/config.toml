@@ -1,0 +1,35 @@
+[brew]
+install = '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+environment_mac = """
+(echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> ~/.zprofile
+eval "$(/usr/local/bin/brew shellenv)"
+"""
+casks = [
+    "google-chrome",
+    "google-japanese-ime",
+    "visual-studio-code",
+    "sourcetree",
+]
+
+[git]
+cmd = """
+brew install git
+brew tap microsoft/git
+brew install git-credential-manager-core
+"""
+
+[starship]
+install = "curl -sS https://starship.rs/install.sh | sh"
+init_zsh = """
+(echo; echo 'eval "$(starship init zsh)"') >> ~/.zshrc
+"""
+curl_config_file = """
+curl --create-dirs --output ~/.config/starship.toml \
+        https://raw.githubusercontent.com/yuta0428/dotfiles/master/.config/starship.toml
+"""    
+
+[mac]
+hidden_file = """
+defaults write com.apple.finder AppleShowAllFiles TRUE
+killall Finder
+"""
