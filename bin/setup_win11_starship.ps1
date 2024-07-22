@@ -16,6 +16,7 @@ if (-Not (Get-Command "starship" -ErrorAction SilentlyContinue)) {
     ## WSL2
     wsl curl -sS https://starship.rs/install.sh | sh
 }
+
 Write-Host "# starship version:"
 starship --version
 
@@ -24,10 +25,10 @@ Write-Host ""
 $yn = Read-Host "# Add .config/starship.toml? (y/N)"
 if ($yn -eq "y" -or $yn -eq "Y") {
     Write-Host "# Add .config/starship.toml >>>>>>>"
-    $starshipTomlUrl = "https://raw.githubusercontent.com/yuta0428/dotfiles/master/.config/starship.toml"
-    $starshipTomlPath = "$HOME/.config/starship.toml"
+    $fromPath = "../.config/starship.toml"
+    $toPath = "$HOME/.config/starship.toml"
     New-Item -ItemType Directory -Path "$HOME/.config" -Force
-    Invoke-WebRequest -Uri $starshipTomlUrl -OutFile $starshipTomlPath
+    Copy-Item -Path $fromPath -Destination $toPath -Force
 
     ## WSL2
     wsl ln -s $(wslpath $starshipTomlPath) ~/.config/starship.toml
