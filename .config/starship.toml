@@ -22,6 +22,7 @@ $php\
 $python\
 $ruby\
 $rust\
+${custom.git_email}\
 $line_break\
 $character\
 """
@@ -62,6 +63,7 @@ untracked = "U$count"
 staged = "A$count"
 modified = "M$count"
 deleted = "D$count"
+windows_starship = '/mnt/c/Program Files/starship/bin/starship.exe'
 
 [character]
 disabled = false
@@ -69,3 +71,9 @@ format = "$symbol"
 success_symbol = "[\\(๑˃̵ᴗ˂̵\\)و❯ ](cyan)"
 error_symbol = "[\\(๑°д°\\)۶❯ ](red)"
 
+[custom.git_email]
+command = "git config user.email"
+when = true
+require_repo = true
+format = "by [$output]($style) "
+style = "bright-yellow bold"
