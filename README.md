@@ -23,9 +23,6 @@ powershell ./bin/setup_win11_gitconfig.ps1
 
 # WSL setting
 powershell ./bin/setup_win11_wsl.ps1
-
-# Required git repository
-powershell ./bin/setup_win11_repo.ps1
 ```
 
 - on WSL
@@ -39,7 +36,7 @@ powershell ./bin/setup_win11_repo.ps1
 **Windows(and WSL)**
 - on PowerShell
 ```ps1
-powershell setup_starship_win11.ps1
+powershell ./bin/setup_win11_starship.ps1
 ```
 
 **Mac**

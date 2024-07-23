@@ -16,6 +16,9 @@ winget install SlackTechnologies.Slack
 ## Chrome
 winget install Google.Chrome
 
+## GitHubDesktop
+winget install GitHub.GitHubDesktop
+
 ## Sourcetree
 winget install Atlassian.Sourcetree
 

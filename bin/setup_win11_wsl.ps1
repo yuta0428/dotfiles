@@ -15,7 +15,7 @@ if ($confirmation -eq "Y" -or $confirmation -eq "y") {
 }
 
 # Change Editor Nano -> Vim
-sudo update-alternatives --config editor
+wsl sudo update-alternatives --config editor
 
 # Git
 # https://zenn.dev/horatjp/articles/windows-dev-env#git
