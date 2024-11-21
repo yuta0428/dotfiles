@@ -14,4 +14,4 @@ wsl sudo git config --system credential.helper "/mnt/c/Program\\ Files/Git/mingw
 
 ### https://github.com/zsh-users/zsh-autosuggestions/issues/557
 wsl sudo git config --system core.autocrlf false
-wsl sudo git config --system core.eol false
+wsl sudo git config --system core.eol lf
